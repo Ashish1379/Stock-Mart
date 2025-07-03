@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Stock Mart{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% if not user.is_authenticated %}
+    <div class="home-div">
+        <h1 class="heading">Welcome To Market</h1>
+        <a href="{% url 'login' %}">
+            <button class="login-button">login</button>
+        </a>
+    </div>
+
+    {% else %}
+    <h1 class="heading">Welcome To Market, {{user}}</h1>
+    {% endif %}
+
+
+    <div class="grid">
+        {% for i in data %}
+        {% include 'components/card.html' with ticker=i.ticker name=i.name price=i.curr_price %}
+        {% empty %}
+        <p>No stocks available.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+/* Ensure the container wraps content properly */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* padding: 30px 20px; */
+}
+
+.heading{
+    text-align:left;
+}
+.login-button {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 1px 1px rgb(202, 202, 207);
+    background-color: rgb(135, 135, 194);
+    color: whitesmoke;
+}
+
+.login-button:hover{
+    background-color: rgb(95, 95, 193);
+    cursor: pointer;
+    width: 60px;
+    height: 40px;
+}   
+/* Card Grid */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* or space-between */
+}
+
+/* Card */
+.card {
+    width: 260px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.ticker-price {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+/* Buy/Sell section */
+.buttons {
+    display: grid;
+    justify-content: space-between;
+    
+    gap: 10px;
+}
+
+.buttons form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.buttons input[type="number"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.buy,
+.sell {
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+}
+.buy-div{
+    background-color: #28a745;
+    padding-bottom: 6px;
+    border-radius: 6px;
+}
+.buy {
+    background-color: #28a745;
+    color: white;
+}
+
+.buy:hover , .buy-div:hover {
+    background-color: #218838;
+}
+.sell-div{
+    background-color: #dc3545;
+    padding-bottom: 6px;
+    border-radius: 6px;
+}
+.sell {
+    background-color: #dc3545;
+    color: white;
+}
+
+.sell:hover , .sell-div:hover{
+    background-color: #c82333;
+}

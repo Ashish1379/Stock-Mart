@@ -1,0 +1,26 @@
+<div class="card">
+    <h3>{{ name }}</h3>
+
+    <div class="ticker-price">
+        <span class="ticker">{{ ticker }}</span>
+        <span class="price">₹{{ price }}</span>
+    </div>
+
+    <div class="buttons">
+        <form method="POST" action="{% url 'buyStock' i.ticker %}">
+            {% csrf_token %}
+            <div class="buy-div">
+                <button type="submit" class="buy">Buy</button>
+                <input type="number" name="quantity" placeholder="buy-quantity" min="1" required>
+            </div>
+        </form>
+
+        <form method="POST" action="{% url 'sellStock' i.ticker %}">
+            {% csrf_token %}
+            <div class="sell-div">
+                <button type="submit" class="sell">Sell</button>
+                <input type="number" name="quantity" placeholder="sell-quantity" min="1" required>
+            </div>
+        </form>
+    </div>
+</div>

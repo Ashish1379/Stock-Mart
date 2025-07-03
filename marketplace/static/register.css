@@ -1,0 +1,106 @@
+/* === REGISTER PAGE === */
+.content{
+    padding-top: 30px;
+}
+.register-container {
+    /* max-height: 1500px; */
+    max-width: 410px;
+    margin: auto;
+    background-color: #f9f9f9;
+    padding: 15px 30px 15px 30px; /* T R B L */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.register-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"],
+.register-form input[type="file"] {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.register-form input[type="file"] {
+    padding: 5px;
+    width: 200px;
+}
+
+.register-form button {
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-form button:hover {
+    background-color: #0056b3;
+    font-size: 15.4px;
+}
+
+.error-message {
+    color: #d8000c;
+    background-color: #ffd2d2;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    list-style: none;
+}
+
+.form-footer-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #444;
+}
+
+.form-footer-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-footer-text a:hover {
+    text-decoration: underline;
+}
+
+.form-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 10px; */
+}
+
+.form-content label {
+    /* flex: 1; */
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.form-content input {
+    flex: 0.5;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
