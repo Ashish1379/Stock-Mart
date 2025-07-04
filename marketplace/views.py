@@ -10,7 +10,32 @@ from django.contrib  import messages
 
 @login_required
 def home(request):
-    return render(request , 'index.html')
+    user = request.user
+    user_stocks = UserStock.objects.select_related('stock').filter(user = user)
+
+    total_value = 0
+    invested = 0
+
+    for item in user_stocks:
+        stock_value = item.purchase_quantity * item.stock.curr_price
+        invested_value = item.purchase_quantity * item.purchase_price
+
+        total_value += stock_value
+        invested += invested_value
+        item.total_value = stock_value
+
+    gains = ((total_value - invested) / invested) * 100 if invested != 0 else 0
+
+    context = {
+        'data': user_stocks,
+        'total_value': total_value,
+        'invested': invested,
+        'gains': round(gains, 2),
+    }
+
+    # context = {'data' : user_stocks}
+
+    return render(request , 'index.html' , context)
 
 
 def getData(request):
@@ -151,3 +176,15 @@ def sell(request , id):
         else:
             userStocks.save()
     return redirect('market')
+
+def stock(request):
+    q =request.POST.get('search')
+
+    if q:
+        stocks = Stocks.objects.filter(name__icontains=q)
+    else:
+        stocks = Stocks.objects.all()
+
+    context= {'data' : stocks}
+    return render(request , 'market.html' , context)
+

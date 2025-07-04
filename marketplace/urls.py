@@ -11,7 +11,8 @@ urlpatterns =[
   path('logout/', views.logoutView , name='logout') ,
   path('register/', views.registerView , name = 'register') ,
   path('market/buy/<str:id>/' , views.buy , name = 'buyStock') ,
-  path('market/sell/<str:id>/' , views.sell , name = 'sellStock')
+  path('market/sell/<str:id>/' , views.sell , name = 'sellStock'),
+  path('market/stockView/',views.stock , name = 'stockSearch' )
  ]
 
 urlpatterns += static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)

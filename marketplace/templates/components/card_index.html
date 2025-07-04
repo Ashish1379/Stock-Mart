@@ -1,0 +1,16 @@
+<div class="card-index">
+    <!-- Stock Name -->
+    <h3>{{ i.stock.name }}</h3>
+
+    <!-- Ticker and Price -->
+    <div class="ticker-price-index">
+        <span class="ticker-index">{{ i.stock.ticker }}</span>
+        <span class="price-index">price: {{ i.stock.curr_price }}</span>
+    </div>
+
+    <!-- User Holding Details -->
+    <div class="stock-details-index">
+        <p>Quantity Held: {{i.purchase_quantity }}</p>
+        <p>Purchased At: ₹{{ i.purchase_price }}</p>
+    </div>
+</div>

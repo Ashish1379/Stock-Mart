@@ -7,19 +7,22 @@
     {% if not user.is_authenticated %}
     <div class="home-div">
         <h1 class="heading">Welcome To Market</h1>
-        <a href="{% url 'login' %}">
+        <!-- <a href="{% url 'login' %}">
             <button class="login-button">login</button>
-        </a>
+        </a> -->
     </div>
 
     {% else %}
     <h1 class="heading">Welcome To Market, {{user}}</h1>
     {% endif %}
-
+    <form method="POST" action="{% url 'stockSearch' %}">
+         {% csrf_token %}
+        <input type="text" name="search" placeholder="Search stocks" />
+    </form>
 
     <div class="grid">
         {% for i in data %}
-        {% include 'components/card.html' with ticker=i.ticker name=i.name price=i.curr_price %}
+        {% include 'components/card_market.html' with ticker=i.ticker name=i.name price=i.curr_price %}
         {% empty %}
         <p>No stocks available.</p>
         {% endfor %}
